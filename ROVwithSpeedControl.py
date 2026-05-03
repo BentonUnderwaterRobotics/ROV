@@ -72,15 +72,6 @@ def right_down():
      
 def right_up_down_stop():
     Right45.value=0
-
-# def blue():
-#    print('Blue')
-    
-#  def green():
-#    print('Green')
-    
-#  def orange():
-#    print('Orange')
     
 def red_stop():
     print('EMERGENCY STOP')
@@ -89,27 +80,6 @@ def red_stop():
     Left45.value=0.00
     Right45.value=0.00
     
-#  def button4():
-#    print('Open Claw ')
-#    print (claw)
-#    hand.value=claw
-
-    
-#  def button5():
-#    print('Close Claw')
-#    print (claw)
-#    hand.value=claw
-
-    
-# def button6():
-#    print('Twist Right')
-#    print (arm)
-#    twist.value=arm
- 
-# def button7():
-#    print('Twist Left')
-#    print (arm)
-#    twist.value=arm
     
 def camoff():
     print('Cam DOWN')
@@ -119,24 +89,6 @@ def camoff():
 def camon():
     print ('Cam UP')
     UpCam.on()
-
-    
-# def button8():
-#    print('Button 8 SERVO HOME')
-#    twist.value=0.0
-#    sleep(2)
-#    hand.value=0.0
-    
-
-#def button10():
-#    print('Button 10')
-    
-#def button11():
-#    print('Button 11')
-    
-    
-# def hat_centered():
-#    print('Hat Centered')
     
 while True:
     for event in pygame.event.get():
@@ -189,67 +141,24 @@ while True:
             
             if direction == 2 and abs((power) < 0.01) and abs((power) >-0.01):
                 right_up_down_stop()
-            
-            #if direction == 4 and power < -0.02: 
-            #    print('left trigger forward')
-            
-            #if direction == 4 and power > 0.02:
-            #    print('left trigger reverse')
-            
-            #if direction == 4 and abs((power) < 0.01) and abs((power) >-0.01):
-            #    print('left trigger stop')
-            
-            #if direction == 5 and power < -0.02: 
-            #    print('right trigger forward')
-            
-            #if direction == 5 and power > 0.02:
-            #    print('right trigger reverse')
-            
-            #if direction == 5 and abs((power) < 0.01) and abs((power) >-0.01):
-            #    print('right trigger stop')
-                
-        
-        # if event.type == pygame.JOYHATMOTION:
-          #  if event.value == (0, 0):
-          #      print('Hat Centered')
-          #  if event.value == (1, 0):
-          #      print('Hat Right')
-          #  if event.value == (-1, 0):
-          #      print('Hat Left')
-          #  if event.value == (0, 1):
-          #      print('Hat Up')
-          #  if event.value == (0, -1):
-          #      print('Hat Down')
-        
+                               
         if event.type == pygame.JOYBUTTONDOWN:
-          #  if event.button == 0:
-          #      blue()
-          #  if event.button == 1:
-          #      green()
+         
             if event.button == 2:
                 red_stop()  #  This is where the EMERGENCY STOP event is detected.
-          #  if event.button == 3:
-          #     orange()
+         
             if event.button == 4:
                 speed = (speed + 1.1)
                 if speed >= 7:
                     speed = 7
                 print (speed)
-          #      button4()
+         
             if event.button == 5:
                 speed = (speed - 1.1)
                 if speed <= 2.6:
                     speed = 2.6
                 print (speed)
-          #      button5()
-           # if event.button == 6:
-           #    print ('Left Button')
-          #      button6()
-           # if event.button == 7:
-            #    print ('Left Button')
-          #      button7()
-          #  if event.button == 8:
-          #      button8()
+          
             if event.button == 9:
                 if cam == 0:
                     cam = 1
@@ -257,7 +166,4 @@ while True:
                 else:
                     cam = 0
                     camoff()
-          #  if event.button == 10:
-          #      button10()
-          #  if event.button == 11:
-          #      button11()
+         
